@@ -1,40 +1,39 @@
-// <⚠️ DONT DELETE THIS ⚠️>
-import "./styles.css";
-const colors = ["#1abc9c", "#3498db", "#9b59b6", "#f39c12", "#e74c3c"];
-// <⚠️ /DONT DELETE THIS ⚠️>
-
 /*
-✅ The text of the title should change when the mouse is on top of it.
-✅ The text of the title should change when the mouse is leaves it.
-✅ When the window is resized the title should change.
-✅ On right click the title should also change.
-✅ The colors of the title should come from a color from the colors array.
-✅ DO NOT CHANGE .css, or .html files.
-✅ ALL function handlers should be INSIDE of "superEventHandler"
+1. css파일을 추가하지 않는 방법.
+2. css파일을 이용한 방법.
 */
+const body = document.querySelector("body");
 
-const title = document.querySelector("h2");
-
-const superEventHandler = {
-  handleMouseEnter: function () {
-    title.innerText = "The mouse is here!";
-    title.style.color = colors[0];
-  },
-  handleMouseLeave: function () {
-    title.innerText = "The mouse is gone!";
-    title.style.color = colors[1];
-  },
-  handleResizingWindow: function () {
-    title.innerText = "You just resized!";
-    title.style.color = colors[2];
-  },
-  handleRightClick: function () {
-    title.innerText = "That was a right click!";
-    title.style.color = colors[4];
+function firstColorSet(){
+  const firstWidth = window.innerwidth;
+  if (firstWidth < 300){
+    body.style.backgroundColor = "skyblue";
   }
-};
+  else if(firstWidth >= 300 && width < 500){
+    body.style.backgroundColor = "purple";
+  }
+  else if(firstWidth >= 500){
+    body.style.backgroundColor = "yellow";
+  }
+}
+firstColorSet();
 
-title.addEventListener("mouseenter", superEventHandler.handleMouseEnter);
-title.addEventListener("mouseleave", superEventHandler.handleMouseLeave);
-window.addEventListener("resize", superEventHandler.handleResizingWindow);
-window.addEventListener("contextmenu", superEventHandler.handleRightClick);
+function changeColor(){
+  const width = window.innerWidth;
+  if (width < 300){
+    body.style.backgroundColor = "skyblue";
+  }
+  else if(width >= 300 && width < 800){
+    body.style.backgroundColor = "purple";
+  }
+  else if(width >= 800){
+    body.style.backgroundColor = "yellow";
+  }
+}
+
+window.addEventListener("resize", changeColor);
+
+
+
+
+
