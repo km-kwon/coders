@@ -1,5 +1,103 @@
-/*
+const loginForm = document.querySelector("#login-form");
+const loginInput = loginForm.querySelector("input");
+const greeting = document.querySelector("#greeting");
 
+const HIDDEN_CLASSNAME = "hidden";
+/*string만 넣는 변수는 무조건 다 대문자*/
+const USERNAME_KEY = "username";
+
+
+checkLogin();
+function checkLogin(){
+  if(localStorage.getItem(USERNAME_KEY)){
+    const username = localStorage.getItem(USERNAME_KEY);
+    paintGreeting(username);
+  } else{
+    loginForm.addEventListener("submit", handleSubmit);
+    /*Eventlistener는 무조건 첫번째 argument는 event의 대한 정보*/    
+  }
+  return;
+}
+function paintGreeting(username){  
+  loginForm.classList.add(HIDDEN_CLASSNAME);
+  greeting.innerText = `Hello ${username}`;
+  greeting.classList.remove(HIDDEN_CLASSNAME);
+}
+function handleSubmit(event){
+  event.preventDefault();  
+  const username = loginInput.value;
+  localStorage.setItem(USERNAME_KEY, username);
+  paintGreeting(username);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 1일차 
 
 const title = document.querySelector("h2");
@@ -86,7 +184,7 @@ function changeColor(){
 }
 
 window.addEventListener("resize", changeColor);
-*/
+
 
 const body = document.querySelector("body");
 const skyblue = "skyblue";
@@ -118,3 +216,4 @@ function changeColor() {
 
 window.addEventListener("resize", changeColor);
 
+*/

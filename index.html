@@ -7,7 +7,17 @@
   </head>
 
   <body>
+    <form id="login-form">
+      <!-- 신기한게 form 안에 input은 엔터나 
+        그냥 아무 버튼이나 눌러도 자동으로 submit됨-->
+      <input 
+      required
+      maxlength="15"
+      type="text" 
+      placeholder="What is your name?">
+      <button>Log in</button>
+    </form>
+    <h1 id="greeting" class="hidden"></h1>
     <script src="app.js"></script>
-    <h1>Hello!</h1>
   </body>
 </html>
