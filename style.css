@@ -1,3 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Annie+Use+Your+Telescope&family=Archivo+Black&family=Lexend+Peta:wght@200&family=Nanum+Brush+Script&display=swap');
+:root{
+  --white : #fff;
+  --black : #333;
+  }
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Annie Use Your Telescope', cursive;
+    color: var(--black);
+}
+body{
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
 .hidden{
   display: none;
+}
+
+video{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  /*video 나 img 가 콘테츠 박스에 얼마나 맞게 위치할수 있게끔 하는 방법*/
+}
+#clock{
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 10vw;
+
+}
+#quote{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  width: 100vw;
+  bottom: 5%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  font-size: 2em;
+}
+#quote span{
+  margin-bottom: 30px;
+  font-weight: 30px;
+}
+.login{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3em;
+  transition: all 2s;
+  background-color: red;
+  user-select: none;
+  z-index: 100;
+}
+.login.active{
+  opacity: 0;
+  z-index: 0;
+}
+.login input{
+  text-align: center;
+  font-size: 4vw;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  border-bottom: 3px solid ver(--black);
+  background-color: rgba(255, 255, 255, 0);
+}
+.login input:focus{
+  outline: none;
+}
+
+.afterLogin{
+  opacity: 0;
+  transition: all 2s;
+  user-select: none;
+}
+.afterLogin.active{
+  opacity: 1;
+}
+
+
+
+.btns{
+  position: absolute;
+  top: 20px;
+  right: 50px;
+  width: 100px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin-left: 10px;
+  z-index: 10;
+}
+.btns h1{
+  margin-right: 10px;
+}
+.btns ion-icon{
+  font-size: 3em;
+  color: var(--black);
+}
+.btns.menu ion-icon{
+  font-size: 3em;
+}
+.btns ion-icon:nth-child(3){
+  display: none;
+}
+.btns.active ion-icon:nth-child(3){
+  display: block;
+}
+.btns.active ion-icon:nth-child(2){
+  display: none;
+}
+
+#todoBar{
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  top: 0; 
+  height: 100%;
+  width: 100%;
+  left: -100%;
+  background: red;
+  transition: all 2s;
+  z-index: 5;
+  background-color: rgb(230, 10, 10, 0.3);
+  
+}
+#todoBar.active{
+  left: 0;
+}
+#todoBar ul{
+  list-style: none;
 }

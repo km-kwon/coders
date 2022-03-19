@@ -7,25 +7,51 @@
   </head>
 
   <body>
-    <form id="login-form">
-      <!-- 신기한게 form 안에 input은 엔터나 
-        그냥 아무 버튼이나 눌러도 자동으로 submit됨-->
-      <input 
-      required
-      maxlength="15"
-      type="text" 
-      placeholder="What is your name?">
-      <button>Log in</button>
-    </form>
-    <h2 id="clock"></h2>
-    <h1 id="greeting" class="hidden"></h1>
-    <div id="quote">
-      <span></span>
-      <span></span>
+    <video src="video/forest.mp4" autoplay loop muted type="mp4"></video>
+    <div class="login">
+      <form id="login-form">
+        <!-- 신기한게 form 안에 input은 엔터나 
+          그냥 아무 버튼이나 눌러도 자동으로 submit됨-->
+        <input 
+        required
+        maxlength="15"
+        type="text" 
+        placeholder="What is your name?">
+        <button class="hidden">Log in</button>
+      </form>
+      <h1 id="greeting" class="hidden"></h1>
     </div>
-    <script src="greeting.js"></script>
-    <script src="clock.js"></script>
-    <script src="quote.js"></script>
-    <script src="background.js"></script>
+    <div class="afterLogin">
+      <h2 id="clock"></h2>
+      <div class="btns menu">
+        <h1>Todos</h1>
+        <ion-icon name="menu-outline"></ion-icon>
+        <ion-icon name="close-outline"></ion-icon>
+      </div>
+      <div id="todoBar">
+          <form id="todo-form">
+            <input 
+            type="text"
+            placeholder="Write your todo"
+            required>
+          </form>
+        <ul id="todo-list"></ul>
+      </div>
+        <div id="quote">
+          <span></span>
+          <span></span>
+        </div>
+        <div id="weather">
+          <span></span>
+          <span></span>
+        </div>
+    </div>
+    <script src="js/greeting.js"></script>
+    <script src="js/quote.js"></script>
+    <script src="js/clock.js"></script>
+    <!--<script src="js/background.js"></script>-->
+    <script src="js/todo.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <!--<script src="js/weather.js"></script>-->
   </body>
 </html>
