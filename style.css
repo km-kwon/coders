@@ -9,6 +9,7 @@
     box-sizing: border-box;
     font-family: 'Annie Use Your Telescope', cursive;
     color: var(--white);
+    text-shadow: 0px 8px 5px rgba(0,0,0,1);
 }
 body{
   position: relative;
@@ -50,7 +51,6 @@ video{
   left: 50%;
   transform: translate(-50%, 0);
   font-size: 2.5em;
-  text-shadow: 0px 8px 5px rgba(0,0,0,1);
   font-weight: 500;
 }
 #quote span{
@@ -78,7 +78,7 @@ video{
   justify-content: center;
   align-items: center;
   font-size: 3em;
-  transition: all 4s;
+  transition: all 3s;
   background-color: rgba(124, 120, 120, 0.5);
   user-select: none;
   z-index: 100;
@@ -123,6 +123,7 @@ video{
   top: 30px;
   right: 180px;
   font-size: 2em;
+  z-index: 10;
 }
 
 

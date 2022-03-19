@@ -1,8 +1,8 @@
 const videos = [
-    "섬광.mp4",
-    "forest1.mp4",
     "forest.mp4",
-    "star.mp4",
+    "forest1.mp4",
+    "nature.mp4",
+    "cloud.mp4",
     "library.mp4"
 ];
 
