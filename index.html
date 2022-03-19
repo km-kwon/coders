@@ -7,7 +7,6 @@
   </head>
 
   <body>
-    <video src="video/forest.mp4" autoplay loop muted type="mp4"></video>
     <div class="login">
       <form id="login-form">
         <!-- 신기한게 form 안에 input은 엔터나 
@@ -23,6 +22,10 @@
     </div>
     <div class="afterLogin">
       <h2 id="clock"></h2>
+      <audio controls autoplay = true loop id="player" class="hidden">
+        <source src="mp3/piano.mp3" type="audio/mp3">
+      </audio>
+      <ion-icon id="playBtn" name="musical-notes-outline"></ion-icon>
       <div class="btns menu">
         <h1>Todos</h1>
         <ion-icon name="menu-outline"></ion-icon>
@@ -32,7 +35,7 @@
           <form id="todo-form">
             <input 
             type="text"
-            placeholder="Write your todo"
+            placeholder="TO DO!"
             required>
           </form>
         <ul id="todo-list"></ul>
@@ -49,9 +52,13 @@
     <script src="js/greeting.js"></script>
     <script src="js/quote.js"></script>
     <script src="js/clock.js"></script>
-    <!--<script src="js/background.js"></script>-->
+    <script src="js/weather.js"></script>
     <script src="js/todo.js"></script>
+    <script src="js/background.js"></script>
+    <script src="js/audioplay.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <!--<script src="js/weather.js"></script>-->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    
   </body>
 </html>

@@ -1,13 +1,19 @@
-const images = [
-    "1.jpg",
-    "2.jpg",
-    "3.jpg"
+const videos = [
+    "섬광.mp4",
+    "forest1.mp4",
+    "forest.mp4",
+    "star.mp4",
+    "library.mp4"
 ];
 
-const chosenImage = images[Math.floor(Math.random() * images.length)];
+const chosenVideo = videos[Math.floor(Math.random() * videos.length)];
 
-const bgImage = document.createElement("img");
+const bgVideo = document.createElement("video");
 
-bgImage.src = `images/${chosenImage}`;
-
-document.body.appendChild(bgImage);
+bgVideo.src = `video/${chosenVideo}`;
+bgVideo.autoplay = true;
+bgVideo.loop = true;
+bgVideo.muted =  true;
+bgVideo.type = "mp4";
+bgVideo.style.zIndex = -1;
+document.body.prepend(bgVideo);

@@ -21,23 +21,39 @@ function saveToDos(){
 
 function deleteTodo(event){
     const li = event.target.parentElement;
-    li.remove();    
+    li.remove(); 
     toDos = toDos.filter(todo => todo.id !== parseInt(li.id));
     //filter는 함수 내용을 바꾸는 함수가 아님
+
     saveToDos();
 }
 
+function checkTodo(event){
+    const li = event.target.parentElement;
+    if(li.style.textDecoration === "line-through"){
+        li.style.textDecoration = "none";
+    }else{
+     li.style.textDecoration = "line-through"
+    }
+}
 
 function paintTodo(newTodo){
     const li = document.createElement("li");
     li.id = newTodo.id;
     const span = document.createElement("span");
     span.innerText = newTodo.text;
-    const button = document.createElement("button");
-    button.innerText = "❌"
-    button.addEventListener("click", deleteTodo);
+    const div = document.createElement("div");
+    const icon = document.createElement("ion-icon");
+    icon.name = "close-outline"
+    icon.addEventListener("click",deleteTodo);
+    const icon2 = document.createElement("ion-icon");
+    icon2.name = "checkmark-outline"
+    
+    icon2.addEventListener("click", checkTodo);
     li.appendChild(span); //appen은 거의 마지막에 넣기
-    li.appendChild(button);
+    div.appendChild(icon);
+    div.appendChild(icon2);
+    li.appendChild(div);
     todoList.appendChild(li);
 }
 
